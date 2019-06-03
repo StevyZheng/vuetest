@@ -21,6 +21,9 @@
         <button @click="rowDel(index)">移除</button>
       </td>
     </tr>
+    <tr>
+      <td><button @click="rowAdd">添加</button></td>
+    </tr>
   </table>
     <br/>
     <button @click="submit">提交</button>
@@ -49,6 +52,13 @@ export default {
     },
     rowDel: function (index) {
      this.goods.splice(index, 1)
+    },
+    rowAdd: function(){
+      this.goods.push({
+        name: "",
+        price: 0,
+        count: 0
+      })
     },
     submit: function () {
       var str = "";
