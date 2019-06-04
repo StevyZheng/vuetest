@@ -13,7 +13,7 @@
       <td align="center">
         <label>
           <button id="add" @click="add(index)">+</button>
-          <input id="price" :value="g.count" width="20px">
+          <input id="count" v-model="g.count" size="4">
           <button id="del" @click="del(index)">-</button>
         </label>
       </td>
@@ -26,7 +26,15 @@
     </tr>
   </table>
     <br/>
-    <button @click="submit">提交</button>
+    <button @click="submit">提交</button><br/>
+    <input type="radio" v-model="picked" name="test" value="js1" id="js1">
+    <label for="js1">js11</label><br/>
+    <input type="radio" v-model="picked" name="test" value="js2" id="js2">
+    <label for="js2">js22</label><br/>
+    <input type="radio" v-model="picked" name="test" value="js3" id="js3">
+    <label for="js3">js33</label><br/>
+    <p>选择的是：{{picked}}</p>
+
   </div>
 </template>
 
@@ -35,6 +43,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
+      packed: 'js1',
       goods:[
         {name:'《C++》', price: 100, count: 0},
         {name:'《钢铁是怎样练成的》', price: 78, count: 0}
