@@ -55,12 +55,13 @@
 </template>
 
 <script>
-import Test from "@/components/Test";
+
+import ChildComponent from "./ChildComponent";
 
 export default {
   name: 'HelloWorld',
   components:{
-    'test': Test
+    'test': ChildComponent
   },
   data () {
     return {
